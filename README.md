@@ -1,50 +1,22 @@
-# React + TypeScript + Vite
+# Dynamic Form Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **React + TypeScript** application that lets you build and render dynamic forms. Form creators can add various field types (text, checkbox, radio, select) and apply conditional display logic.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. **Form Builder**  
+   - Create new forms by adding fields: text, checkbox, radio, or select.  
+   - Name your form, preview it before saving.
+   - Fields can be marked as *required*.
 
-- Configure the top-level `parserOptions` property like this:
+2. **Conditional Logic**  
+   - Show/hide a field based on another field’s value.  
+   - The user picks the *target element* by **label** in the UI, but the condition is stored by **ID** internally, ensuring robust references even if labels change.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+3. **Validation**  
+   - Uses **React Hook Form** with a **Yup** schema builder to validate required fields, checkboxes, etc.  
+   - Displays inline error messages for each field.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
