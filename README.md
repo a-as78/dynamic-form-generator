@@ -20,3 +20,6 @@ A **React + TypeScript** application that lets you build and render dynamic form
    - Uses **React Hook Form** with a **Yup** schema builder to validate required fields, checkboxes, etc.  
    - Displays inline error messages for each field.
 
+Link to the deployed project:
+https://dynamic-form-generator-eight-peach.vercel.app/
+
